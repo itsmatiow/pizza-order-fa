@@ -1,16 +1,15 @@
 export function formatCurrency(value) {
-  return new Intl.NumberFormat("en", {
-    style: "currency",
-    currency: "EUR",
-  }).format(value);
+  return new Intl.NumberFormat("fa-IR").format(value) + "تومن";
 }
 
 export function formatDate(dateStr) {
-  return new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "short",
-    hour: "2-digit",
-    minute: "2-digit",
+  return new Intl.DateTimeFormat("fa-IR", {
+    // day: "numeric",
+    // month: "short",
+    // hour: "2-digit",
+    // minute: "2-digit",
+    dateStyle: "medium",
+    timeStyle: "short",
   }).format(new Date(dateStr));
 }
 

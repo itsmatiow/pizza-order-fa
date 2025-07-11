@@ -14,9 +14,9 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
   return (
     <div className="px-4 py-3">
-      <LinkButton to="/menu">&larr; Back to menu</LinkButton>
+      <LinkButton to="/menu">&rarr; برگشت به منو</LinkButton>
 
-      <h2 className="mt-7 text-xl font-semibold">Your cart,{username}</h2>
+      <h2 className="mt-7 text-xl font-semibold">سبد خرید شما:{username}</h2>
 
       <ul className="mt-3 divide-y divide-stone-200 border-b border-stone-200">
         {cart.map((item) => (
@@ -26,11 +26,11 @@ function Cart() {
 
       <div className="mt-6 space-x-2">
         <Button to="/order/new" type="primary">
-          Order pizzas
+          سفارش
         </Button>
 
         <Button type="secondary" onClick={() => dispatch(clearCart())}>
-          Clear cart
+          حذف همه
         </Button>
       </div>
     </div>

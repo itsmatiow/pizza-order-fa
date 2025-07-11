@@ -1,10 +1,22 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --font-display: "Roboto Mono", "monospace";
-}
+} */
 .input {
   @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:ring focus:ring-yellow-400 focus:outline-none md:px-6 md:py-3;
+}
+
+@font-face {
+  font-family: Cinema;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/Cinema.ttf") format("truetype");
+}
+
+@theme {
+  --font-display: "Cinema", "sans-serif";
 }
 
 /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */

@@ -36,7 +36,7 @@ function MenuItem({ pizza }) {
           {!soldOut ? (
             <p className="text-sm">{formatCurrency(unitPrice)}</p>
           ) : (
-            <p className="font-medium text-stone-500">Sold out</p>
+            <p className="font-medium text-stone-500">تمام شد :(</p>
           )}
           {isInCart && (
             <div className="flex items-center gap-3 sm:gap-8">
@@ -49,7 +49,7 @@ function MenuItem({ pizza }) {
           )}
           {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
-              Add to cart
+              افزودن به سبد خرید
             </Button>
           )}
         </div>

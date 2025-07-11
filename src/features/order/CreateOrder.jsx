@@ -37,10 +37,10 @@ function CreateOrder() {
 
   return (
     <div className="px-4 py-6">
-      <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
+      <h2 className="mb-8 text-xl font-semibold">مشخصات خود را وارد کنید</h2>
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">First Name</label>
+          <label className="sm:basis-40">نام و نام خانوادگی</label>
           <input
             type="text"
             name="customer"
@@ -51,7 +51,7 @@ function CreateOrder() {
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Phone number</label>
+          <label className="sm:basis-40">شماره تلفن</label>
           <div className="grow">
             <input type="tel" name="phone" required className="input w-full" />
             {formErrors?.phone && (
@@ -63,7 +63,7 @@ function CreateOrder() {
         </div>
 
         <div className="relative mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Address</label>
+          <label className="sm:basis-40">آدرس</label>
           <div className="grow">
             <input
               className="input w-full"
@@ -80,7 +80,7 @@ function CreateOrder() {
             )}
           </div>
           {!position.latitude && !position.longitude && (
-            <span className="absolute top-[35px] right-[5px] z-50 sm:top-[3px] sm:right-[4px] md:top-[5px]">
+            <span className="absolute top-[35px] right-[5px] z-50 sm:top-[3px] sm:right-[35px] md:top-[5px]">
               <Button
                 disabled={isLoadingAddress}
                 type="small"
@@ -89,7 +89,7 @@ function CreateOrder() {
                   dispatch(fetchAddress());
                 }}
               >
-                Get position
+                دریافت موقعیت مکانی
               </Button>
             </span>
           )}
@@ -105,7 +105,7 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label className="font-medium" htmlFor="priority">
-            Want to you give your order priority?
+            نیاز به آماده‌سازی سریع دارید؟ (20% هزینه بیشتر)
           </label>
         </div>
 
@@ -123,8 +123,8 @@ function CreateOrder() {
           />
           <Button disabled={isSubmitting || isLoadingAddress} type="primary">
             {isSubmitting
-              ? "Placing order..."
-              : `Order now from ${formatCurrency(totalPrice)}`}
+              ? "در حال تایید"
+              : `با قیمت${formatCurrency(totalPrice)} سفارش دهید`}
           </Button>
         </div>
       </Form>
