@@ -101,7 +101,7 @@ function CreateOrder() {
             type="checkbox"
             name="priority"
             id="priority"
-            value={withPriority}
+            checked={withPriority}
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label className="font-medium" htmlFor="priority">
@@ -135,10 +135,20 @@ function CreateOrder() {
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
+  const estimatedDelivery = new Date(Date.now() + 30 * 60 * 1000).toISOString();
+  const cart = JSON.parse(data.cart);
+  const orderPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+  const priority = data.priority === "on";
+  const priorityPrice = priority ? orderPrice * 0.2 : 0;
+  const totalPrice = orderPrice + priorityPrice;
   const order = {
     ...data,
-    cart: JSON.parse(data.cart),
-    priority: data.priority === "true",
+    cart,
+    priority,
+    estimatedDelivery,
+    orderPrice,
+    priorityPrice,
+    totalPrice,
   };
   //اینجا اونی که استرینگ کردیم رو پارس کردیم و به ابجکت تبدیل شد.
   //اون یکی هم چک میشه اگر آن بود ترو باشه در غیر این صورت فالس

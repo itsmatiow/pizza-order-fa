@@ -15,7 +15,7 @@ function Home() {
         <CreateUser />
       ) : (
         <Button to="/menu" type="primary">
-          Continue ordering, {username}
+          {username} عزیز، به سفارش ادامه بده
         </Button>
       )}
     </div>

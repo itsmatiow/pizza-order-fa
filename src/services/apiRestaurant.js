@@ -13,17 +13,25 @@ export async function getMenu() {
 
 export async function getOrder(id) {
   const res = await fetch(`${API_URL}/order/${id}`);
-  if (!res.ok) throw Error(`Couldn't find order #${id}`);
+  if (!res.ok) throw Error(`نتونستیم سفارش #${id} رو پیدا کنیم.`);
 
   const data = await res.json();
   return data;
 }
 
+export function generateOrderId() {
+  return Math.floor(100000 + Math.random() * 900000).toString(36);
+}
+
 export async function createOrder(newOrder) {
   try {
+    const orderWithId = {
+      ...newOrder,
+      id: generateOrderId(),
+    };
     const res = await fetch(`${API_URL}/order`, {
       method: "POST",
-      body: JSON.stringify(newOrder),
+      body: JSON.stringify(orderWithId),
       headers: {
         "Content-Type": "application/json",
       },
