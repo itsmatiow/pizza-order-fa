@@ -18,6 +18,13 @@ The project simulates a real restaurant ordering experience where customers can 
 * Fully responsive design
 * Persian RTL interface
 
+## 📸 Screenshots
+
+Here are some screenshots from the project, showcasing its interface and user experience.
+<img width="2732" height="1494" alt="menu 1" src="https://github.com/user-attachments/assets/37b68346-a0f2-47e2-a746-fdda2cea8189" />
+<img width="780" height="1688" alt="menu 2" src="https://github.com/user-attachments/assets/dc2cdeb9-3b7b-47b3-a30b-e3727d65c913" />
+
+
 ## 🛠️ Tech Stack
 
 * React
