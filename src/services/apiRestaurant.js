@@ -1,5 +1,6 @@
 // const API_URL = "https://react-fast-pizza-api.jonas.io/api";
-const API_URL = "https://pizzaapi-ek0i.onrender.com";
+//const API_URL = "https://pizzaapi-ek0i.onrender.com";
+const API_URL = "https://pizzaapi-topaz.vercel.app";
 
 export async function getMenu() {
   const res = await fetch(`${API_URL}/menu`);
