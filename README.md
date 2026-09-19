@@ -27,14 +27,12 @@ The project simulates a real restaurant ordering experience where customers can 
 * React Router
 * REST API
 
-## 📱 Screens
+## 🌐 Other Version
 
-* Table number selection
-* Restaurant menu
-* Shopping cart
-* Order form
-* Order confirmation
-* Order tracking
+English version of this project:
+
+**[Pizza Order — English Version](https://github.com/itsmatiow/pizza-order-en)**
+
 
 ## 🚀 Getting Started
 
